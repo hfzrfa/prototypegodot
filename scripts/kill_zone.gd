@@ -3,12 +3,12 @@ extends Area2D
 @onready var timer: Timer = $Timer
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
-const RELOAD_DELAY := 0.9
+const RELOAD_DELAY := 0.2
 
 func _on_body_entered(body: Node2D) -> void:
 	print("You Died!")
 	animation_player.play("death")
-	Engine.time_scale = 0.5
+	Engine.time_scale = 0.1
 	if body.has_method("die"):
 		body.call("die")
 	else:
